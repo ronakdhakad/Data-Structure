@@ -1,3 +1,4 @@
+//  program to shift all the zeros to the end
 import java.util.Scanner;
 class Demo1{
     public static void main(String args[]){
@@ -15,7 +16,8 @@ class Demo1{
         for(int i=0;i<size;i++){
             System.out.print(" "+arr[i]);
         }
-System.out.println();
+        
+        System.out.println();
         int count=0;
         for(int i=0;i<size;i++){
             if(0==arr[i]){
