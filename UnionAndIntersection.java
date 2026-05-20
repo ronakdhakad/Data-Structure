@@ -1,4 +1,5 @@
 // 2. union and intersection of two arrays
+import java.util.HashSet;
 import java.util.Scanner;
 class Demo2{
     public static void main(String args[]){
@@ -14,39 +15,48 @@ class Demo2{
             arr1[i]=sc.nextInt();
         }
         
-        System.out.println();
-        System.out.println("Array 1st elements ..");
-        for(int i=0; i<size1;i++){
-            System.out.print(" "+arr1[i]);
-        }
-
+        
         System.out.println();
         System.out.println("Enter 2nd array size..");
         int size2 = sc.nextInt();
         int arr2[]=new int[size2];
-
+        
         System.out.println();
         System.out.println("Enter array 2nd elements...");
         for(int i=0; i<size2;i++){
             arr2[i]=sc.nextInt();
         }
-        int arr3[] = new int[arr1.length + arr2.length];
+
+        System.out.println();
+        System.out.println("Array 1st elements ..");
+        for(int i=0; i<size1;i++){
+            System.out.print(" "+arr1[i]);
+        }
         System.out.println();
         System.out.println("Array 2nd elements ..");
         for(int i=0; i<size2;i++){
             System.out.print(" "+arr2[i]);
         }
 
-
-        System.out.print("Union ...");
         System.out.println();
-        for(int i=0;i<arr1.length;i++){
-            for(int j=0;j<arr2.length;j++){
-            if(arr1[i]==arr2[j]){
-                System.out.print(" "+arr2[j]);
+        HashSet<Integer> intersectionSet = new HashSet<>();
+        
+
+            System.out.println();
+            HashSet<Integer> set =new HashSet();
+            for(int i=0;i<arr1.length;i++){
+                set.add(arr1[i]);
             }
-        }
-        System.out.println("Intersection ...");
-        }
+            
+            System.out.println("Union ..."+set);
+        
+            for(Integer s:arr2){
+                if(set.contains(s)){
+                    intersectionSet.add(s);
+                }
+            }
+            System.out.println();
+            System.out.println("Intersection..."+intersectionSet);
+            
     }
 }
